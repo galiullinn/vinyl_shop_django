@@ -5,23 +5,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     {% block css %} {% endblock %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <title>{{ title }}</title>
 </head>
 <body>
-    <header>
-        <a href="#">
-            <p>VINYL SHOP</p>
+    <header class="container">
+        <a href="#" class="header-logo">
+            <img src="{% static 'img/logo-icon.svg' %}" 
+                 alt="logo" loading="lazy"
+                 width="40px" height="40px">
         </a>
-        <nav>
-            <ul>
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">Товары</a></li>
-                <li><a href="#">О нас</a></li>
-                <li><a href="#">Блог</a></li>
+        <nav class="header-nav">
+            <ul class="header-menu-list">
+                <li class="header-menu-item"><a href="#" class="header-menu-link">Home</a></li>
+                <li class="header-menu-item"><a href="#" class="header-menu-link">Vinyl</a></li>
+                <li class="header-menu-item"><a href="#" class="header-menu-link">Blog</a></li>
+                <li class="header-menu-item"><a href="#" class="header-menu-link">About</a></li>
             </ul>
         </nav>
+        <div class="header-actions">
+            <ul class="header-actions-list">
+                <li class="header-actions-item"><a href="#" class="header-actions-link">Sign In</a></li>
+                <li class="header-actions-item"><a href="#" class="header-actions-link">Profile</a></li>
+            </ul>
+        </div>
     </header>
     <main>
         {% block main %} {% endblock %}
