@@ -2,5 +2,35 @@
 {% load static %}
 
 {% block main %}
-    
+        <section class="container products">
+            <h1 class="products-list-title">Vinyl</h1>
+            <ul class="products-list">
+                <li class="products-list-item">
+                    <a href="#" class="products-list-link">
+                        <div class="album-img">
+                            <img src="{{ album.image.url }}" alt="album">
+                        </div>
+                        <div class="product-info">
+                            <h2 class="artist-name">{{ album.artist.name }}</h2>
+                            <h3 class="album-name">{{ album.title }}</h3>
+                            <p class="price">{{ album.price }} USD</p>
+                        </div>
+                    </a>
+                </li>
+                {% for album in albums %}
+                <li class="products-list-item">
+                    <a href="#" class="products-list-link">
+                        <div class="album-img">
+                            <img src="{{ album.image.url }}" alt="album">
+                        </div>
+                        <div class="product-info">
+                            <h2 class="artist-name">{{ album.artist.name }}</h2>
+                            <h3 class="album-name">{{ album.title }}</h3>
+                            <p class="price">{{ album.price }} USD</p>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </section>
 {% endblock %}

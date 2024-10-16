@@ -15,6 +15,15 @@ class Artist(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Label(models.Model):
+    name = models.CharField(max_length=256, unique=True)
+    description = models.TextField(null=True, blank=True)
+    image = models.ImageField(upload_to='artist_image', null=True, blank=True)
+
+    def __str__(self):
+        return self.name
     
 
 class Album(models.Model):
@@ -24,11 +33,13 @@ class Album(models.Model):
     image = models.ImageField(upload_to='album_image', null=True, blank=True)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     quantity = models.PositiveIntegerField(default=0)
-    artist = models.ForeignKey(to=Artist, on_delete=models.CASCADE)
-    genre = models.ForeignKey(to=Genre, on_delete=models.CASCADE)
+    label = models.ForeignKey(to=Label, on_delete=models.CASCADE)
+    artist = models.ManyToManyField(to=Artist)
+    genre = models.ManyToManyField(to=Genre)
 
     def __str__(self):
-        return f"{self.title} - {self.genre.name} by {self.artist.name}"
+        genres_names = ", ".join([genre.name for genre in self.genres.all()])
+        return f"{self.title} - {genres_names} by {self.artist.name}"
     
 
 class Track(models.Model):

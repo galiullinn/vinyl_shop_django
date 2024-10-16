@@ -4,19 +4,19 @@
     --color-gray: #e1e1e1;
 
     --border-radius: 15px;
-    --border: 1px solid var(var(--color-light));
 
-    --container-width: 1440px;
+    --container-width: 1200px;
     --container-padding-x: 15px;
 
     --transition-duration: 0.3s;
 }
 
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-style: normal;
     font-display: swap;
+    font-size: 15px;
     background-color: var(--color-light);
 }
 
@@ -28,7 +28,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
-    text-transform: uppercase;
 }
 
 a {
@@ -37,6 +36,7 @@ a {
     transition: var(--transition-duration);
 }
 
+/*-------------------------------base.html------------------------------*/
 header {
     height: 60px;
     display: grid;
@@ -47,7 +47,7 @@ header {
 }
 
 .header-logo img:hover {
-    transform: rotate(360deg);
+    transform:rotate(360deg);
     transition: var(--transition-duration);
 }
 
@@ -73,3 +73,46 @@ header {
     gap: 20px;
 }
 
+/*-------------------------------products.html------------------------------*/
+
+.products {
+    margin: 50px auto;
+}
+
+.products-list-title {
+    font-size: 40px;
+}
+
+.products-list {
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;;
+}
+
+.products-list-item {
+    background-color: var(--color-gray);
+}
+
+.products-list-link {
+    display: block;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.album-img {
+    width: 252px;
+    height: 252px;
+    background-color: var(--color-light);
+    margin: 0 0 10px 0;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.artist-name {
+    font-weight: 500;
+}

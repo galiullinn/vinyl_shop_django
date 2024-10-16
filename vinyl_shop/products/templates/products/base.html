@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <title>{{ title }}</title>
 </head>
 <body>
@@ -22,7 +22,7 @@
         <nav class="header-nav">
             <ul class="header-menu-list">
                 <li class="header-menu-item"><a href="{% url 'index' %}" class="header-menu-link">Home</a></li>
-                <li class="header-menu-item"><a href="#" class="header-menu-link">Vinyl</a></li>
+                <li class="header-menu-item"><a href="{% url 'products:index' %}" class="header-menu-link">Vinyl</a></li>
                 <li class="header-menu-item"><a href="#" class="header-menu-link">Blog</a></li>
                 <li class="header-menu-item"><a href="{% url 'about' %}" class="header-menu-link">About</a></li>
             </ul>
